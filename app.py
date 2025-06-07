@@ -22,6 +22,9 @@ avg_billing = df['Billing Amount'].mean()
 # Initialize the Dash app with a Bootstrap theme
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP, '/assets/styles.css'])
 
+# Expose the server for deployment
+server = app.server
+
 # Layout
 app.layout = dbc.Container([
     dbc.Row([
@@ -205,4 +208,3 @@ def update_insurance_comparison(selected_gender):
 # Run the app
 if __name__ == "__main__":
     app.run(debug=True)
-
